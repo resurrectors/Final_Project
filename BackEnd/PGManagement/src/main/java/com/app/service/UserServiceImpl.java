@@ -1,6 +1,7 @@
 package com.app.service;
 
 import java.util.Optional;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -13,6 +14,7 @@ import com.app.dto.User;
 import com.app.dto.UserDTO;
 import com.app.dto.UserRegResponse;
 import com.app.entities.AddressEntity;
+import com.app.entities.Role;
 import com.app.entities.UserEntity;
 import com.app.repository.AddressRepository;
 import com.app.repository.RoleRepository;
@@ -62,8 +64,14 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public User getUserByID(long userId) {
-		return mapper.map(userRepo.getReferenceById(userId),User.class);
+	public User getUserByEmail(String userEmail) {
+		return mapper.map(userRepo.findByEmail(userEmail),User.class);
+	}
+	
+	@Override
+	public Set<Role> getUserRolesByEmail(String userEmail) {
+		UserEntity ue = userRepo.findByEmail(userEmail).orElse(null);
+		return ue.getUserRoles();
 	}
 
 	@Override

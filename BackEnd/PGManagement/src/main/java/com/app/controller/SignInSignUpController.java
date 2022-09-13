@@ -49,7 +49,7 @@ public class SignInSignUpController {
 			// authenticate the credentials
 			Authentication authenticatedDetails = manager.authenticate(authToken);
 			// => auth succcess
-			return ResponseEntity.ok(new AuthResp("Auth successful!", utils.generateJwtToken(authenticatedDetails)));
+			return ResponseEntity.ok(new AuthResp("Auth successful!", utils.generateJwtToken(authenticatedDetails), userService.getUserRolesByEmail(request.getEmail())));
 		} catch (BadCredentialsException e) { // lab work : replace this by a method in global exc handler
 			// send back err resp code
 			System.out.println("err "+e);

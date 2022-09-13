@@ -84,7 +84,7 @@
 			"response": []
 		},
 		{
-			"name": "/user/1",
+			"name": "/user/email",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -99,7 +99,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/user/1",
+					"raw": "http://localhost:8080/user/dummy@gmail.com",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -107,7 +107,7 @@
 					"port": "8080",
 					"path": [
 						"user",
-						"1"
+						"dummy@gmail.com"
 					]
 				}
 			},
@@ -130,7 +130,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Shubh\",\r\n    \"lastName\": \"Patil\",\r\n    \"country_code\": 91,\r\n    \"contact_no\": 9876543215,\r\n    \"user_addr\": {\r\n        \"addrl1\": \"new\",\r\n        \"addrl2\": \"new\",\r\n        \"city\": \"nashik\",\r\n        \"state\": \"maharashtra\",\r\n        \"country\": \"india\",\r\n        \"zipCode\": \"422008\"\r\n    },\r\n    \"email\": \"shubh@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"id\": 7,\r\n    \"firstName\": \"dummy\",\r\n    \"lastName\": \"dummy\",\r\n    \"country_code\": null,\r\n    \"contact_no\": null,\r\n    \"email\": \"dummy@gmail.com\",\r\n    \"user_addr\": {\r\n        \"addrl1\": \"dadd\",\r\n        \"addrl2\": \"dadd\",\r\n        \"city\": \"nashik\",\r\n        \"state\": \"maharashtra\",\r\n        \"country\": \"india\",\r\n        \"zipCode\": \"422008\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -138,7 +138,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/user/1",
+					"raw": "http://localhost:8080/user/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -146,7 +146,7 @@
 					"port": "8080",
 					"path": [
 						"user",
-						"1"
+						"7"
 					]
 				}
 			},
@@ -168,7 +168,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/user/3",
+					"raw": "http://localhost:8080/user/6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -176,7 +176,7 @@
 					"port": "8080",
 					"path": [
 						"user",
-						"3"
+						"6"
 					]
 				}
 			},
@@ -216,6 +216,74 @@
 					"path": [
 						"address",
 						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/building/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwNDg2ODAsImV4cCI6MTY2MzEzNTA4MH0.4VO-7_NSKAJTlRnKtK0WUtWPmfRFz8DN95SUarkk-Ocvbt23fkg-agUtLQTsQ1ijxSvUw6ZBTg8fGJ3x2F4P1g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"new Building\",\r\n        \"building_addr\": {\r\n            \"addrl1\": \"nnn\",\r\n            \"addrl2\": \"nnn\",\r\n            \"city\": \"nnn\",\r\n            \"state\": \"nnn\",\r\n            \"country\": \"nnn\",\r\n            \"zipCode\": \"422008\"\r\n        },\r\n        \"owner\": {\r\n            \"id\": 1,\r\n            \"firstName\": \"Shubh\",\r\n            \"lastName\": \"Patil\",\r\n            \"country_code\": \"91\",\r\n            \"contact_no\": \"9876543215\",\r\n            \"user_addr\": {\r\n                \"id\": 12,\r\n                \"addrl1\": \"new\",\r\n                \"addrl2\": \"new\",\r\n                \"city\": \"nashik\",\r\n                \"state\": \"maharashtra\",\r\n                \"country\": \"india\",\r\n                \"zipCode\": \"422008\"\r\n            },\r\n            \"email\": \"shubh@gmail.com\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/building/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"building",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/building",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwNDg2ODAsImV4cCI6MTY2MzEzNTA4MH0.4VO-7_NSKAJTlRnKtK0WUtWPmfRFz8DN95SUarkk-Ocvbt23fkg-agUtLQTsQ1ijxSvUw6ZBTg8fGJ3x2F4P1g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/building",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"building"
 					]
 				}
 			},

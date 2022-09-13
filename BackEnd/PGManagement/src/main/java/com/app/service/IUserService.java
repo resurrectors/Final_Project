@@ -1,15 +1,18 @@
 package com.app.service;
 
+import java.util.Set;
+
 import com.app.dto.User;
 import com.app.dto.UserDTO;
 import com.app.dto.UserRegResponse;
+import com.app.entities.Role;
 
 public interface IUserService {
 
 	UserRegResponse registerUser(UserDTO user);
 	User getUser(String email, String password);
-	User getUserByID(long userId);
+	User getUserByEmail(String userEmail);
 	User updateUserByID(long userId, User newData);
 	User deleteUserByID(long userId);
-
+	Set<Role> getUserRolesByEmail(String userEmail);
 }

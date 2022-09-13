@@ -2,6 +2,11 @@ package com.app.dto;
 
 
 
+import java.util.HashSet;
+import java.util.Set;
+
+import com.app.entities.Role;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
