@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "50b4dc70-8fa1-401c-89ae-12a214ed3c1e",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get address by id in path",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/address/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"dummy\",\r\n    \"lastName\":\"dummy\",\r\n    \"email\":\"dummy@gmail.com\",\r\n    \"password\":\"dummy@1234\",\r\n    \"roles\":[\"ROLE_USER\",\"ROLE_OWNER\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"shubh@gmail.com\",\r\n    \"password\":\"Shubh@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwMzg3OTYsImV4cCI6MTY2MzEyNTE5Nn0.qyD6KXxK7Zv1JogCFg1Dl0ca5RwvKr8LPNtbpHuO-NOoR749hwhM9xs8sjby6wl34zd7wxjwtQy0yXVcTulkxA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwMzg3OTYsImV4cCI6MTY2MzEyNTE5Nn0.qyD6KXxK7Zv1JogCFg1Dl0ca5RwvKr8LPNtbpHuO-NOoR749hwhM9xs8sjby6wl34zd7wxjwtQy0yXVcTulkxA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Shubh\",\r\n    \"lastName\": \"Patil\",\r\n    \"country_code\": 91,\r\n    \"contact_no\": 9876543215,\r\n    \"user_addr\": {\r\n        \"addrl1\": \"new\",\r\n        \"addrl2\": \"new\",\r\n        \"city\": \"nashik\",\r\n        \"state\": \"maharashtra\",\r\n        \"country\": \"india\",\r\n        \"zipCode\": \"422008\"\r\n    },\r\n    \"email\": \"shubh@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwMzg3OTYsImV4cCI6MTY2MzEyNTE5Nn0.qyD6KXxK7Zv1JogCFg1Dl0ca5RwvKr8LPNtbpHuO-NOoR749hwhM9xs8sjby6wl34zd7wxjwtQy0yXVcTulkxA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/address/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjI5ODYxMzQsImV4cCI6MTY2MzA3MjUzNH0.vSXU0kE60YVyWFTYlysQU8YHCQJOywt97SDW8NJS_P1Zsc1eQEJh49k6FN8VSzsuf9Sonmtfy37FNNmS1pgIEw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"addrl1\":\"firstline2\",\r\n\t\"addrl2\":\"secondline2\",\r\n\t\"city\":\"nashik\",\r\n\t\"state\":\"maharashtra\",\r\n\t\"country\":\"india\",\r\n\t\"zipCode\":\"422008\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/address/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwNDAxOTYsImV4cCI6MTY2MzEyNjU5Nn0.NMmSjhdBOpTvrNXF8AIiyI18hBXYA93tgDhYe-csEsYfJRgHf9VNhi-mpFrb9GOobDyG2fHnNYdoAOaUUZ9zqQ",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
