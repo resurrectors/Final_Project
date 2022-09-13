@@ -1,0 +1,266 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 41
+Server version: 8.0.28 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use mypg;select * from users;select * from address;select * from buildings;select * from rooms;select * from beds;
+Database changed
+Empty set (0.00 sec)
+
+Empty set (0.00 sec)
+
+Empty set (0.00 sec)
+
+Empty set (0.00 sec)
+
+Empty set (0.00 sec)
+
+mysql> desc beds;
++-------+--------+------+-----+---------+----------------+
+| Field | Type   | Null | Key | Default | Extra          |
++-------+--------+------+-----+---------+----------------+
+| id    | bigint | NO   | PRI | NULL    | auto_increment |
+| room  | bigint | NO   | MUL | NULL    |                |
+| user  | bigint | YES  | MUL | NULL    |                |
++-------+--------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> insert into beds values(1,1,1);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`mypg`.`beds`, CONSTRAINT `FKga9uucv1m82dlqi0vmcm2d9fa` FOREIGN KEY (`room`) REFERENCES `rooms` (`id`))
+mysql> select * from users;
+Empty set (0.00 sec)
+
+mysql> desc users;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| id           | bigint      | NO   | PRI | NULL    | auto_increment |
+| contact_no   | varchar(10) | NO   |     | NULL    |                |
+| country_code | varchar(3)  | NO   |     | NULL    |                |
+| email        | varchar(30) | NO   | UNI | NULL    |                |
+| first_name   | varchar(20) | YES  |     | NULL    |                |
+| last_name    | varchar(30) | YES  |     | NULL    |                |
+| password     | varchar(20) | NO   |     | NULL    |                |
+| user_addr    | bigint      | NO   | MUL | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> desc address;
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| id            | bigint      | NO   | PRI | NULL    | auto_increment |
+| address_line1 | varchar(50) | YES  |     | NULL    |                |
+| address_line2 | varchar(50) | YES  |     | NULL    |                |
+| city          | varchar(20) | YES  |     | NULL    |                |
+| country       | varchar(20) | YES  |     | NULL    |                |
+| state         | varchar(20) | YES  |     | NULL    |                |
+| zip_code      | varchar(6)  | YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> insert into address values(default,"firstline","secondline","nashik","india","maharashtra","422008");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use mypg;select * from users;select * from address;
+Database changed
+Empty set (0.00 sec)
+
++----+---------------+---------------+--------+---------+-------------+----------+
+| id | address_line1 | address_line2 | city   | country | state       | zip_code |
++----+---------------+---------------+--------+---------+-------------+----------+
+|  1 | firstline     | secondline    | nashik | india   | maharashtra | 422008   |
++----+---------------+---------------+--------+---------+-------------+----------+
+1 row in set (0.00 sec)
+
+mysql> desc buildings;
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| id            | bigint      | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(20) | NO   |     | NULL    |                |
+| building_addr | bigint      | NO   | MUL | NULL    |                |
+| owner         | bigint      | NO   | MUL | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+mysql> insert into buildings values (default,"firstbuilding,1,1);
+    "> ;^C
+mysql> insert into buildings values (default,"firstbuilding",1,1);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`mypg`.`buildings`, CONSTRAINT `FK7idjs1h4blfth13udekpeeht8` FOREIGN KEY (`owner`) REFERENCES `users` (`id`))
+mysql>
+mysql>
+mysql> desc users;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| id           | bigint      | NO   | PRI | NULL    | auto_increment |
+| contact_no   | varchar(10) | NO   |     | NULL    |                |
+| country_code | varchar(3)  | NO   |     | NULL    |                |
+| email        | varchar(30) | NO   | UNI | NULL    |                |
+| first_name   | varchar(20) | YES  |     | NULL    |                |
+| last_name    | varchar(30) | YES  |     | NULL    |                |
+| password     | varchar(20) | NO   |     | NULL    |                |
+| user_addr    | bigint      | NO   | MUL | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> insert into users values (default, "9876431254", "91", "email@gmail.com","shubham","pat","password",1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into address values(default,"firstline2","secondline2","nashik","india","maharashtra","422008");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from users;
++----+------------+--------------+-----------------+------------+-----------+----------+-----------+
+| id | contact_no | country_code | email           | first_name | last_name | password | user_addr |
++----+------------+--------------+-----------------+------------+-----------+----------+-----------+
+|  1 | 9876431254 | 91           | email@gmail.com | shubham    | pat       | password |         1 |
++----+------------+--------------+-----------------+------------+-----------+----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> use mypg;select * from users;select * from address;
+Database changed
++----+------------+--------------+-----------------+------------+-----------+----------+-----------+
+| id | contact_no | country_code | email           | first_name | last_name | password | user_addr |
++----+------------+--------------+-----------------+------------+-----------+----------+-----------+
+|  1 | 9876431254 | 91           | email@gmail.com | shubham    | pat       | password |         1 |
++----+------------+--------------+-----------------+------------+-----------+----------+-----------+
+1 row in set (0.00 sec)
+
++----+---------------+---------------+--------+---------+-------------+----------+
+| id | address_line1 | address_line2 | city   | country | state       | zip_code |
++----+---------------+---------------+--------+---------+-------------+----------+
+|  1 | firstline     | secondline    | nashik | india   | maharashtra | 422008   |
+|  2 | firstline2    | secondline2   | nashik | india   | maharashtra | 422008   |
++----+---------------+---------------+--------+---------+-------------+----------+
+2 rows in set (0.00 sec)
+
+mysql> insert into buildings values (default,"firstbuilding",1,1);^C
+mysql> desc buildings;
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| id            | bigint      | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(20) | NO   |     | NULL    |                |
+| building_addr | bigint      | NO   | MUL | NULL    |                |
+| owner         | bigint      | NO   | MUL | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into buildings values (default,"firstbuilding",1,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from buildings
+    -> l
+    -> ;
++----+---------------+---------------+-------+
+| id | name          | building_addr | owner |
++----+---------------+---------------+-------+
+|  2 | firstbuilding |             1 |     1 |
++----+---------------+---------------+-------+
+1 row in set (0.00 sec)
+
+mysql> desc rooms;
++----------+--------+------+-----+---------+----------------+
+| Field    | Type   | Null | Key | Default | Extra          |
++----------+--------+------+-----+---------+----------------+
+| id       | bigint | NO   | PRI | NULL    | auto_increment |
+| rent     | double | YES  |     | NULL    |                |
+| building | bigint | NO   | MUL | NULL    |                |
++----------+--------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> insert into rooms values(default, 800, 1);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`mypg`.`rooms`, CONSTRAINT `FK66eb5cj1tqlbjkug6m9bj7wvf` FOREIGN KEY (`building`) REFERENCES `buildings` (`id`))
+mysql> insert into rooms values(default, 800, 2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into rooms values(default, 1200, 2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc beds;
++-------+--------+------+-----+---------+----------------+
+| Field | Type   | Null | Key | Default | Extra          |
++-------+--------+------+-----+---------+----------------+
+| id    | bigint | NO   | PRI | NULL    | auto_increment |
+| room  | bigint | NO   | MUL | NULL    |                |
+| user  | bigint | YES  | MUL | NULL    |                |
++-------+--------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into beds values(default, 2);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into beds(id,room) values(default, 2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into beds(id,room) values(default, 2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into beds(id,room) values(default, 2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into users values (default, "9876431254", "91", "email2@gmail.com","shubham2","pat2","password2",2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into users values (default, "9876431254", "91", "email2@gmail.com","shubham2","pat2","password2",2);
+ERROR 1062 (23000): Duplicate entry 'email2@gmail.com' for key 'users.UK_6dotkott2kjsp8vw4d0m25fb7'
+mysql>
+mysql>
+mysql> insert into beds(id,room) values(default, 3);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into beds(id,room) values(default, 3);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into beds(id,room) values(default, 3);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into beds(id,room) values(default, 3);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from beds;
++----+------+------+
+| id | room | user |
++----+------+------+
+|  2 |    2 | NULL |
+|  3 |    2 | NULL |
+|  4 |    2 | NULL |
+|  5 |    3 | NULL |
+|  6 |    3 | NULL |
+|  7 |    3 | NULL |
+|  8 |    3 | NULL |
++----+------+------+
+7 rows in set (0.00 sec)
+
+mysql> update beds set user=2 where id = 3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update beds set user=2 where id = 5;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from beds;
++----+------+------+
+| id | room | user |
++----+------+------+
+|  2 |    2 | NULL |
+|  3 |    2 |    2 |
+|  4 |    2 | NULL |
+|  5 |    3 |    2 |
+|  6 |    3 | NULL |
+|  7 |    3 | NULL |
+|  8 |    3 | NULL |
++----+------+------+
+7 rows in set (0.00 sec)
+
+mysql>
