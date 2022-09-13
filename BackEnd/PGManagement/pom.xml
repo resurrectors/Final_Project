@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring-boot-jwt</artifactId>
+	<artifactId>PGManagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-jwt</name>
+	<name>PGManagement</name>
 	<description>Spring Boot Project With JWT Security Upgraded to lates version n User Registration
 	</description>
 	<properties>

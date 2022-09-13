@@ -26,11 +26,11 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 
-	@GetMapping("/{userId}")
-	public ResponseEntity<?> getUserDetails(@PathVariable long userId) {
+	@GetMapping("/{userEmail}")
+	public ResponseEntity<?> getUserDetails(@PathVariable String userEmail) {
 		log.info(this.getClass() + " method getEmpDetails");
-		log.info("User id " + userId);
-		return ResponseEntity.status(HttpStatus.OK).body(userService.getUserByID(userId));
+		log.info("User id " + userEmail);
+		return ResponseEntity.status(HttpStatus.OK).body(userService.getUserByEmail(userEmail));
 	}
 
 	@PutMapping("/{userId}")

@@ -49,6 +49,7 @@ public class WebSecurityConfig {
 																										// urls with
 																										// /auth
 				// only required for JS clnts (react / angular)
+//		.antMatchers("/building*").permitAll()
 		.antMatchers(HttpMethod.OPTIONS).permitAll().
 		anyRequest().authenticated().
 		and().
