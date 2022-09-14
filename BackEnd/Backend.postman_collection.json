@@ -91,7 +91,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwMzg3OTYsImV4cCI6MTY2MzEyNTE5Nn0.qyD6KXxK7Zv1JogCFg1Dl0ca5RwvKr8LPNtbpHuO-NOoR749hwhM9xs8sjby6wl34zd7wxjwtQy0yXVcTulkxA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMxNDE5NzUsImV4cCI6MTY2MzIyODM3NX0.0Y_HKnXX7Kmwz5gKwMD0HbVpkggEnbbf74D6HA2Sy41-PJQ9s3w3Mh2YLcf5hLI9PreVkBpvmleCK58omlk6TQ",
 							"type": "string"
 						}
 					]
@@ -268,7 +268,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwNDg2ODAsImV4cCI6MTY2MzEzNTA4MH0.4VO-7_NSKAJTlRnKtK0WUtWPmfRFz8DN95SUarkk-Ocvbt23fkg-agUtLQTsQ1ijxSvUw6ZBTg8fGJ3x2F4P1g",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMxNDIzMTcsImV4cCI6MTY2MzIyODcxN30.-lDlvEo3Ki2GUJcWhYZckxh-_pDpdlwJFZWogZlQwmU6aPkKHz7yqufZY1Ox14Ukl47KwtIKnmzj8pgaG7EKZQ",
 							"type": "string"
 						}
 					]
@@ -288,6 +288,238 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/building/10       pending",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwNDg2ODAsImV4cCI6MTY2MzEzNTA4MH0.4VO-7_NSKAJTlRnKtK0WUtWPmfRFz8DN95SUarkk-Ocvbt23fkg-agUtLQTsQ1ijxSvUw6ZBTg8fGJ3x2F4P1g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/building/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"building",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/room/inbuilding/2  getroomsinbuildingbybuildingid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMxNDIzMTcsImV4cCI6MTY2MzIyODcxN30.-lDlvEo3Ki2GUJcWhYZckxh-_pDpdlwJFZWogZlQwmU6aPkKHz7yqufZY1Ox14Ukl47KwtIKnmzj8pgaG7EKZQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/inbuilding/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"inbuilding",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/room/inbuilding/1 addroomtobuilding",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwNDg2ODAsImV4cCI6MTY2MzEzNTA4MH0.4VO-7_NSKAJTlRnKtK0WUtWPmfRFz8DN95SUarkk-Ocvbt23fkg-agUtLQTsQ1ijxSvUw6ZBTg8fGJ3x2F4P1g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rent\":2000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/room/inbuilding/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"inbuilding",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/bed/inroom/2 getlistofbedsinroom",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMxNDI1MDMsImV4cCI6MTY2MzIyODkwM30.I4qswjViQW9s9-j6Yrk9kElidZir_XDsdW2ql48YdjYn7JRG6712Ii1RrpPkMQR-PWkj4GWev2t9fhdhosHhBA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bed/inroom/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bed",
+						"inroom",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/bed/inroom/1 createbedinroom",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMxNDI1MDMsImV4cCI6MTY2MzIyODkwM30.I4qswjViQW9s9-j6Yrk9kElidZir_XDsdW2ql48YdjYn7JRG6712Ii1RrpPkMQR-PWkj4GWev2t9fhdhosHhBA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\":\"this is new bed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bed/inroom/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bed",
+						"inroom",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/bed/8   delete bed with bedid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMxNDI1MDMsImV4cCI6MTY2MzIyODkwM30.I4qswjViQW9s9-j6Yrk9kElidZir_XDsdW2ql48YdjYn7JRG6712Ii1RrpPkMQR-PWkj4GWev2t9fhdhosHhBA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bed/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bed",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/room/1  deleteroombyid pending",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMxNDI1MDMsImV4cCI6MTY2MzIyODkwM30.I4qswjViQW9s9-j6Yrk9kElidZir_XDsdW2ql48YdjYn7JRG6712Ii1RrpPkMQR-PWkj4GWev2t9fhdhosHhBA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/room/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"room",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -295,7 +527,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMwNDAxOTYsImV4cCI6MTY2MzEyNjU5Nn0.NMmSjhdBOpTvrNXF8AIiyI18hBXYA93tgDhYe-csEsYfJRgHf9VNhi-mpFrb9GOobDyG2fHnNYdoAOaUUZ9zqQ",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaHViaEBnbWFpbC5jb20iLCJpYXQiOjE2NjMxNDE1OTUsImV4cCI6MTY2MzIyNzk5NX0.x3g_wQFa4UvSvNqpGdBXqT8yKFEbXNoGcOcO8KQqg-jXZCPGu2ADkYPdtBIp9w83Gk0IhyNdUmfo4sVvGFZYHg",
 				"type": "string"
 			}
 		]
